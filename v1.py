@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def create_neural_net(layer_array, input_dims):
     weights = []
     biases = []
@@ -14,7 +15,7 @@ def create_neural_net(layer_array, input_dims):
         else:
             last_layer_node_number = layer_array[i-1][0]
 
-        for n in range(0,node_num):
+        for _ in range(0, node_num):
             weights_of_node = []
             for l in range(0, last_layer_node_number):
                 weights_of_node.append(1)
@@ -83,9 +84,10 @@ def train_network(X, Y, labels, neural_net, epochs=1000):
             prediction = predict_ratio(X[d], neural_net)
 
             true_prediction = []
-            for i in range(0, len(labels)):
+            for _ in range(0, len(labels)):
                 true_prediction.append(0)
-            true_prediction[labels.index(Y[d])] = 1
+            t = np.where(labels == Y[d])
+            true_prediction[t[0][0]] = 1
 
             errors = []
             for t in range(len(prediction)):
