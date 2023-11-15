@@ -13,7 +13,7 @@ def create_neural_net(layer_array, input_dims):
         if i == 0:
             last_layer_node_number = input_dims
         else:
-            last_layer_node_number = layer_array[i-1][0]
+            last_layer_node_number = layer_array[i - 1][0]
 
         for _ in range(0, node_num):
             weights_of_node = []

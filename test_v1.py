@@ -1,4 +1,4 @@
-from v1 import *
+from v1 import create_neural_net, predict, train_network
 import numpy as np
 
 

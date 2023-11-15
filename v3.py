@@ -17,7 +17,7 @@ class Perceptron:
             Y.append(result)
         return np.array(Y)
 
-    def fit(self, X, Y, epochs = 1, lr = 1):
+    def fit(self, X, Y, epochs=1, lr=1):
         self.w = np.ones(X.shape[1])
         self.b = 0
         accuracy = {}
@@ -27,10 +27,10 @@ class Perceptron:
         for i in range(epochs):
             for x, y in zip(X, Y):
                 y_pred = self.model(x)
-                if y==1 and y_pred==0:
+                if y == 1 and y_pred == 0:
                     self.w = self.w + lr * x
                     self.b = self.b - lr * 1
-                elif y==0 and y_pred==1:
+                elif y == 0 and y_pred == 1:
                     self.w = self.w - lr * x
                     self.b = self.b + lr * 1
 
