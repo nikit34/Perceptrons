@@ -14,7 +14,7 @@ class Perceptron:
             activation = 0
         return activation
 
-    def train(self, training_inputs, labels):
+    def fit(self, training_inputs, labels):
         for _ in range(self.threshold):
             for inputs, label in zip(training_inputs, labels):
                 prediction = self.predict(inputs)
